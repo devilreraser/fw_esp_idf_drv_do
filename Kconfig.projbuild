@@ -1,3 +1,81 @@
-menu "Component template Configuration"
+menu "Component drv_do Configuration"
 
+    config DRV_DO_USE
+        bool "Use drv_do (digital outputs) component"
+        default y
+
+    config DRV_DO_USE_DYNAMIC_INITIALIZATION
+        bool "Use DO pin -> GPIO pin table"
+        default n
+
+    config DRV_DO_GPIO_RANGE_MIN
+        int "GPIO Minimum"
+        default 0
+
+    config DRV_DO_GPIO_RANGE_NONE
+        int "GPIO Not Used"
+        default -1
+
+    config DRV_DO_GPIO_OUT_RANGE_MAX
+        int "GPIO Maximum"
+        default 33 if IDF_TARGET_ESP32
+        default 46 if IDF_TARGET_ESP32S2
+        default 19 if IDF_TARGET_ESP32C3
+        default 48 if IDF_TARGET_ESP32S3
+
+    config DRV_DO_GPIO_IN_RANGE_MAX
+        int "GPIO Maximum"
+        default 39 if IDF_TARGET_ESP32
+        default 46 if IDF_TARGET_ESP32S2
+        default 19 if IDF_TARGET_ESP32C3
+        default 48 if IDF_TARGET_ESP32S3
+
+    
+
+    config DRV_DO_PIN_0
+        int "GPIO pin number DO0"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+
+    config DRV_DO_PIN_1
+        int "GPIO pin number DO1"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+    
+    config DRV_DO_PIN_2
+        int "GPIO pin number DO2"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+    
+    config DRV_DO_PIN_3
+        int "GPIO pin number DO3"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+    
+    config DRV_DO_PIN_4
+        int "GPIO pin number DO4"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+    
+    config DRV_DO_PIN_5
+        int "GPIO pin number DO5"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+    
+    config DRV_DO_PIN_6
+        int "GPIO pin number DO6"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+                            
+    config DRV_DO_PIN_7
+        int "GPIO pin number DO7"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+                                
+    config DRV_DO_PIN_8
+        int "GPIO pin number DO8"
+        range DRV_DO_GPIO_RANGE_NONE DRV_DO_GPIO_OUT_RANGE_MAX
+        default DRV_DO_GPIO_RANGE_NONE
+                            
+                                                                                                                    
 endmenu
