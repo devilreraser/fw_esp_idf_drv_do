@@ -44,6 +44,7 @@ typedef enum
     DRV_DO_6,
     DRV_DO_7,
     DRV_DO_8,
+    DRV_DO_COUNT
 }drv_do_e_pin_t;
 
 typedef enum
@@ -77,7 +78,7 @@ typedef enum
 esp_err_t drv_do_pin_setup(drv_do_e_pin_t do_pin, gpio_num_t gpio_pin);
 drv_do_e_pin_t drv_do_get_do_num(gpio_num_t gpio_pin);
 gpio_num_t drv_do_get_gpio_num(drv_do_e_pin_t do_pin);
-void drv_do_pin_init(drv_do_e_pin_t do_pin);
+esp_err_t drv_do_pin_init(drv_do_e_pin_t do_pin);
 void drv_do_pin_set(drv_do_e_pin_t do_pin);
 void drv_do_pin_clr(drv_do_e_pin_t do_pin);
 void drv_do_init(void);
